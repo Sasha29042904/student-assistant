@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Опрацювати матеріали лекції з React",
+    "completed": false,
+    "dueDate": "2026-10-05",
+    "priority": "high"
+  },
+  {
+    "id": 2,
+    "title": "Виконати практичну роботу № 5",
+    "completed": true,
+    "dueDate": "2026-09-30",
+    "priority": "medium"
+  },
+  {
+    "id": 3,
+    "title": "Підготувати звіт з практичної роботи",
+    "completed": false,
+    "dueDate": "2026-10-02",
+    "priority": "low"
+  }
+]
