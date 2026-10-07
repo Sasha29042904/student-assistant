@@ -71,7 +71,7 @@ body {
   }
 }
 
-/* Індивідуальне завдання: 4 колонки при 1440px */
+/* 4 колонки при 1440px */
 @media (min-width: 1440px) {
   .task-list {
     grid-template-columns: repeat(4, 1fr);
@@ -88,9 +88,11 @@ body {
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  /* --- ТИМЧАСОВА НАВМИСНА ПОМИЛКА ДЛЯ КРОКУ 5 (ПР8) --- */
 }
 
-/* Індивідуальне завдання: clamp() для назви завдання */
+/* clamp() для назви завдання */
 .task-title {
   font-weight: 500;
   font-size: clamp(0.9rem, 1.5vw, 1.15rem);
