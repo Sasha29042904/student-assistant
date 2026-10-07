@@ -1,3 +1,11 @@
+/* ==========================================================================
+   Breakpoints System:
+   - Mobile:  0px і більше (базові стилі, Mobile-First)
+   - Tablet:  600px і більше (@media (min-width: 600px))
+   - Desktop: 1024px і більше (@media (min-width: 1024px))
+   - Large Desktop (Індивідуальне): 1440px і більше (@media (min-width: 1440px))
+   ========================================================================== */
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
@@ -5,37 +13,87 @@ body {
   color: #333;
 }
 
-.app {
-  max-width: 640px;
-  margin: 40px auto;
-  padding: 24px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+/* Контейнер застосунку */
+.app-container {
+  padding: 12px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.app h1 {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 24px;
+/* Шапка з гнучкою типографікою clamp() */
+.app-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+  align-items: center;
 }
 
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  color: #1e293b;
+}
+
+.task-count {
+  font-size: 0.95rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Медіазапит для заголовка на планшетах та десктопах */
+@media (min-width: 600px) {
+  .app-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Адаптивна CSS Grid сітка списку завдань */
 .task-list {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 колонка на смартфонах */
+  gap: 12px;
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
+@media (min-width: 600px) {
+  .task-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+  }
+}
+
+@media (min-width: 1024px) {
+  .task-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки на десктопах */
+  }
+}
+
+/* Індивідуальне завдання: 4 колонки при 1440px */
+@media (min-width: 1440px) {
+  .task-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Картка завдання */
 .task-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 18px;
-  margin-bottom: 12px;
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  list-style: none;
+}
+
+/* Індивідуальне завдання: clamp() для назви завдання */
+.task-title {
+  font-weight: 500;
+  font-size: clamp(0.9rem, 1.5vw, 1.15rem);
 }
 
 .priority-high {
@@ -53,18 +111,4 @@ body {
 .task-card.completed .task-title {
   text-decoration: line-through;
   opacity: 0.6;
-}
-
-@media (max-width: 480px) {
-  .app {
-    margin: 10px;
-    padding: 16px;
-  }
-
-  .task-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 12px 14px;
-  }
 }

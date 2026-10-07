@@ -1,7 +1,6 @@
 import TaskItem from "./TaskItem";
 
 function TaskList({ tasks }) {
-  // Перевірка на випадок, якщо tasks ще не завантажилися
   if (!tasks || !Array.isArray(tasks)) {
     return <p>Завантаження завдань...</p>;
   }
