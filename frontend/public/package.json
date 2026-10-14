@@ -1,0 +1,11 @@
+{
+  "name": "student-assistant-desktop",
+  "main": "index.html",
+  "window": {
+    "title": "Student Assistant",
+    "width": 900,
+    "height": 700,
+    "min_width": 360,
+    "min_height": 480
+  }
+}
