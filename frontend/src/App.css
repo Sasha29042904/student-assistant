@@ -114,3 +114,13 @@ body {
   text-decoration: line-through;
   opacity: 0.6;
 }
+
+.storage-status {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 1rem;
+}
+
+.storage-error {
+  color: #b71c1c;
+}
