@@ -124,3 +124,28 @@ body {
 .storage-error {
   color: #b71c1c;
 }
+.error-banner {
+  background: #fdecea;
+  color: #b71c1c;
+  border-left: 4px solid #b71c1c;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.field-error {
+  color: #b71c1c;
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+}
+
+.task-form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-form label {
+  display: grid;
+  gap: 4px;
+}
